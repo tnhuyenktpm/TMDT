@@ -4,7 +4,7 @@
 }
 body{
 	/*background: #f1f1f1;*/
-	background-image: url(image/background.jpg);
+	background-image: url(image/br1.png);
 	background-repeat: no-repeat;
 	background-size:100% 100%;
 	font-family:"Times New Roman", Times, serif;
@@ -127,6 +127,9 @@ h3{
 	text-align:center;
 	color:black;
 	font-weight:bold;
+}
+a .tel{
+	text-decoration: none;
 }
 nav>ul>li{
 	display:inline-block;
