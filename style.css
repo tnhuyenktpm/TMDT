@@ -3,9 +3,8 @@
 	padding:0px;
 }
 body{
-	/*background: #f1f1f1;*/
-	background-image: url(image/br1.png);
-	background-repeat: no-repeat;
+	background-image:url(image/br.png);
+	background-repeat:no-repeat;
 	background-size:100% 100%;
 	font-family:"Times New Roman", Times, serif;
 }
@@ -13,20 +12,23 @@ body{
 	width:960px;
 	margin:0 auto;
 }
-  </head>
-  </head>
 header{
 	position:relative;
 }
+.menu{
+	position:absolute;
+	top:20px;
+	right:15px;
+}
+.menu a{
+	text-decoration: none;
+	color: #555555;
+}
+
 div.logo{
 	display: block;
     padding-top: 20px;
-    padding-left: 20px;
-}
-.menu{
-	position:absolute;
-	top:10px;
-	right:240px;
+    padding-left: 320px;
 }
 
 article{
@@ -69,12 +71,13 @@ footer p{
 	border-radius:10px;
 }
 .menu1{
-	padding-left:30px;
+	margin-top: 20px;
+	padding: 10px 0px 10px 30px;
 	background-color:#a929f4;
 	border-radius:10px;
 }
 .menu1 ul li{
-	padding:10px;
+	padding:7px;
 }
 .menu1 ul li a{
 	text-decoration:none;
@@ -90,7 +93,7 @@ footer p{
 	margin:0px 3px;
 }
 .button{
-	background-color:#f3285b;
+	background-color:#bc28f2;
 	height:30px;
 	line-height:30px;
 	border-radius:5px;
@@ -114,22 +117,24 @@ footer p{
 	text-align:center;
 }
 h3{
+	font-size: 18px;
 	color:#FFF;
 	font-weight:bold;
-	margin-top:19px;
 }
 .menu2{
+	margin-top: 20px;
+	padding: 10px 0px 10px 0px;
 	background-color:#a929f4;
 	border-radius:10px;
-	padding-top: 1px;
+
+
+	
 }
 .menu2 p{
 	text-align:center;
 	color:black;
 	font-weight:bold;
-}
-a .tel{
-	text-decoration: none;
+	margin: 10px;
 }
 nav>ul>li{
 	display:inline-block;
@@ -154,6 +159,8 @@ nav>ul{
 	border-radius:10px;
 	background-color:#782af4;
 	text-align:center;
+	font-size: 18px;
+
 	} 		
 nav ul ul{
 	position:absolute;
@@ -170,7 +177,8 @@ nav ul ul a{
 	color:white;
 	font-weight:bold;
 	text-decoration:none;
-	padding:10px 10px;}  	
+	padding:10px 10px;}
+	  	
 nav > ul > li:hover>ul{
 	display:block;
 }	
@@ -183,6 +191,10 @@ transition-duration: 0.5s;
 .a img:hover{
 transform:scale(1.5);
 }
+
 .dmsp ul li{
 	list-style: none;
+}
+img.tieude{
+	padding-top: 5px;
 }
