@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Đăng kí - Knowledge Bookstore</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<style>
+.lh{
+	font-weight:bold;
+}
+.lh2{
+	color:#551aa8;
+}
+.lh3{
+	color:#808080;
+}
+.lh1{
+	color:#ff0000;
+}
+article ul li{
+	margin-left:40px;
+	margin-bottom:15px;
+	color:#F00;
+}
+h2{
+	color:#808080;
+	text-align:center;
+	font-style:italic;
+}
+.h{
+	width:260px;
+	height:40px;
+	border-radius:10px;
+	border:2px solid #bc28f2;
+	}
+
+.hu{
+	
+	width:100px;
+	}
+button{
+	background-color:#bc28f2;
+	color:white;
+	height:40px;
+	width:263px;
+	border-radius:10px;
+	}
+button:hover{
+	cursor:pointer;
+	background-color:#F0F;
+	font-weight:bold;
+}
+.hi{
+	float:left;
+	width:60%;
+	padding-left:10px;
+	}
+.hii{
+	float:right;
+	width:35%;
+	}
+</style>
+</head>
+
+<body>
+<div id="menu">
+<header>
+<div class="logo">
+        <img src="image/logo.png" height="70px"/>
+       
+        <div class="menu">
+          <a href="dangki.html">Đăng Kí</a> | 
+          <a href="dangnhap.html">Đăng Nhập</a>
+        </div>
+</header>
+<br />
+<nav>
+<ul class="bang">
+<li><a href="index.html"> TRANG CHỦ</a></li>
+<li><a href="About.html">GIỚI THIỆU</a></li>
+<li><a href="tintuc.html">TIN TỨC SÁCH</a>
+	<ul>
+	<li><a href="Hanghoa1.html">SÁCH HAY</a></li>
+            <li><a href="Hanghoa2.html">SÁCH MỚI NHẤT</a></li>
+            <li><a href="Hanghoa3.html">SÁCH BÁN CHẠY</a></li>
+    </ul>
+    </li>
+<li><a href="huongdan.html">HƯỚNG DẪN MUA HÀNG</a></li>
+<li><a href="lienhe.html">LIÊN HỆ</a></li>
+</ul>
+</nav>
+
+<article>
+<br />
+<img src="image/Lienhe.png" width="700px"/>
+<br />
+<br />
+<div class="hi"><h1 >ĐĂNG KÝ</h1>
+<br /><br />
+<form onsubmit="return validateForm()">
+<div><a>Họ Và Tên*</a><br />
+<input class="h" type="text" id="username" placeholder="Nhập họ tên"/>
+<div class="val_error" id="name_error"></div></div><br />
+<div><a>Email*</a><br />
+<input class="h" type="text" id="email" placeholder="Nhập email"/>
+ <div class="val_error" id="email_error"></div></div><br />
+<div><a>Mật Khẩu</a><br />
+<input class="h" type="text" id="password" placeholder="Nhập password"/>
+ <div class="val_error" id="password_error"></div></div><br />
+<div><a>Nhập Lại Mật Khẩu</a><br />
+<input class="h" type="text" id="re_password" placeholder="Nhập re_password"/>
+ <div class="val_error" id="re_password_error"></div></div><br />
+ <div class="ha"><input type="radio" id="gioi" value="Nam" />&nbsp;Nam
+				<input type="radio" id="gioi" value="Nữ" />&nbsp;Nữ
+<div class="val_error" id="gioi_error"></div></div>
+<div class="hu"><button type="submit">Đăng ký</button></div>
+<br /><br />
+</form></div>
+
+
+<script>
+var radio = document.getElementById('gioi');
+var username = document.getElementById('username');
+var email = document.getElementById('email');
+var password = document.getElementById('password');
+var re_password = document.getElementById('re_password');
+var usename_error = document.getElementById('usename_error');
+var email_error = document.getElementById('email_error');
+var password_error = document.getElementById('password_error');
+var re_password_error = document.getElementById('re_password_error');
+
+    username.addEventListener('blur', usernameVertify, true);
+	email.addEventListener('blur', emailVertify, true);
+	re_password.addEventListener('blur', re_passwordVertify, true);
+//slideshow
+function next(){
+	if(dem==imgs.length-1){
+		dem=0;
+	}else{dem++;}
+	document.getElementById('imgslide').src="images/" +imgs[dem];}
+	
+	chay=setInterval(function(){next();},1000);
+
+
+function usernameVertify(){
+		if(username.value != ""){
+			username.style.border = "";
+			name_error.innerHTML = "";
+			return true;	
+		}
+	}
+	
+	function emailVertify(){
+		var acong = email.value.indexOf('@');
+		var dot = email.value.lastIndexOf('.');
+		
+		if(email.value != "" || acong>=1 || dot >= acong+2 || dot+2<email.value.length){
+			email.style.border = "";
+			email_error.innerHTML = "";
+			return true;	
+		}	
+	}
+	
+	function re_passwordVertify(){
+		
+		if(re_password.value == password.value){
+			re_password.style.border = "";
+			pass_error.innerHTML = "";
+			return true;	
+		}
+	}
+	
+
+function validateForm(){
+ if(username.value==""){
+   username.style.border="2px solid red";
+   name_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập họ tên";
+		username.focus();
+		return false;
+	}
+	var acong = email.value.indexOf('@');
+	var dot = email.value.lastIndexOf('.');
+		
+		if(email.value == "" || acong<1 || dot < acong+2 || dot+2>=email.value.length){
+			email.style.border = "2px solid red";
+			email_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập đúng email";
+			email.focus();
+			return false;	
+		}
+		if(password.value==""){
+   password.style.border="2px solid red";
+   password_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập password";
+		password.focus();
+		return false;
+	}
+	if(re_password.value!=password.value){
+   re_password.style.border="2px solid red";
+   re_password_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập lại password";
+		re_password.focus();
+		return false;
+		}
+		if(radio[0].checked == false && radio[1].checked == false){
+		document.getElementById('gioi_error').innerHTML=" Bạn chưa chọn giới tính";
+		radio[0].focus();
+		return false;
+		}
+		else 
+		 { alert ("Đăng kí thành công")}
+}
+</script>
+
+</article>
+
+<aside>
+
+<div class="menu1">
+<h3>DANH MỤC SẢN PHẨM</h3> 
+<img src="image/icon2.png" />
+<div class="dmsp" align="justify">
+<ul>
+<li><a href="Vanhoc.html">&#128366; Sách văn học</a></li>
+<li><a href="Lichsu.html">&#128366; Sách lịch sử</a></li>
+<li><a href="Yhoc.html">&#128366; Sách y học</a></li>
+<li><a href="Nongnghiep.html">&#128366; Sách nông nghiệp</a></li>
+<li><a href="Vanhoa.html">&#128366; Sách văn hóa</a></li>
+<li><a href="Khaocuu.html">&#128366; Sách khảo cứu</a></li>
+<li><a href="Thieunhi.html">&#128366; Sách thiếu nhi</a></li>
+<li><a href="Thamkhao.html">&#128366; Sách tham khảo</a></li>
+</ul>
+</div>
+</div>
+<br />
+
+<div class="menu2" align="center">
+<h3>HỖ TRỢ TRỤC TUYẾN</h3>
+<img src="image/icon2.png" />
+<p>Lâm Gia Huy</p>
+<a href="https://www.facebook.com/people/L%C3%A2m-Gia-Huy/100008028763963" target="_blank" ><img src="image/tvv1.png" width="110px" height="150px" /></a>
+<p> &#9742;  0983525531</p>
+<hr />
+<p>Trần Ngọc Huyền</p>
+<a href="https://www.facebook.com/kaitran19" target="_blank" ><img src="image/tvv2.png" width="110px" height="150px" /></a>
+<p> &#9742;  0962739775</p>
+</div>
+
+<div class="menu2" align="center">
+<h3>ĐỊA CHỈ SHOP</h3>
+<img src="image/icon2.png" />
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3928.6501453530354!2d105.7652943!3d10.045701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0880fb4de24ad%3A0xe14a9332d13d93ef!2zMjU2IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIEFuIEjDsmEsIE5pbmggS2nhu4F1LCBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1520396587204" width="260" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
+<br /><br /><br />
+<img src="image/log.png" width="260px" />
+</div>
+</aside>
+<footer align="center">
+<br />
+
+<marquee class="chuchay1">Knowledge is the light of life</marquee>
+<div class="ketthuc" ><a href="index.html">Knowledge Bookstore</a></div>
+<br />
+<b>Địa chỉ: Số 256 Nguyễn Văn Cừ, TP. Cần Thơ</b>
+<br />
+<br />
+<p>Hotline của shop: 0983 525531 ~ 0962 739775</p>
+</br>
+<div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 copyright">
+          <span class="provide">© Bản quyền thuộc về Knowledge Bookstore</span><span class="mtinvi"> </span><span>
+          	   </div>
+      </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>

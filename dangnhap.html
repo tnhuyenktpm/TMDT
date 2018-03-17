@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sách Y Học - Bệnh Tim Mạch và cách điều trị | Knowledge Bookstore</title>
+<title>Đăng ký - Knowledge Bookstore</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <style>
 .lh{
@@ -27,40 +27,56 @@ h2{
 	text-align:center;
 	font-style:italic;
 }
-.box1 a{
-	text-decoration:none;
-	color:#000;
-}
-.box1 a:hover{
-	color:#F60;
-}
-.box1 p{
-	text-align:center;
-	color:#333;
+.h{
+	width:260px;
+	height:40px;
+	border-radius:10px;
+	border:2px solid #bc28f2;
+	}
+
+.hu{
+	
+	width:100px;
+	}
+button{
+	background-color:#bc28f2;
+	color:white;
+	height:40px;
+	width:263px;
+	border-radius:10px;
+	}
+button:hover{
+	cursor:pointer;
+	background-color:#F0F;
 	font-weight:bold;
 }
-.box1 h4{
-	color:#F00;
-	text-align:center;
-}
+.hi{
+	float:left;
+	width:60%;
+	padding-left:10px;
+	}
+.hii{
+	float:right;
+	width:35%;
+	}
 </style>
 </head>
 
 <body>
 <div id="menu">
-      <header>
-        <div class="logo">
+<header>
+<div class="logo">
         <img src="image/logo.png" height="70px"/>
         </div>
         <div class="menu">
-          <a href="dangki.html">Đăng Kí</a> |
+          <a href="dangki.html">Đăng Kí</a> | 
           <a href="dangnhap.html">Đăng Nhập</a>
         </div>
-      </header>
-  <br />
-  <nav>
-    <ul class="bang">
-      <li><a href="index.html"> TRANG CHỦ</a></li>
+</header>
+<br />
+<nav>
+<ul class="bang">
+<li><a href="index.html"> TRANG CHỦ</a></li>
       <li><a href="About.html">GIỚI THIỆU</a></li>
       <li><a href="tintuc.html">TIN TỨC SÁCH</a>
 	     <ul>
@@ -71,73 +87,78 @@ h2{
       </li>
       <li><a href="huongdan.html">HƯỚNG DẪN MUA HÀNG</a></li>
       <li><a href="lienhe.html">LIÊN HỆ</a></li>
-    </ul>
-  </nav>
+</ul>
+</nav>
+
 <article>
 <br />
-<div align="center" class="box1">
-<img src="image/yhoc2.png"/><br />
-<div align="center">
-<a href="yhoc2.html">Sách Y Học - Bệnh Tim Mạch và cách điều trị</a>
-</div>
-<p><del>100.000 VNĐ</del></p>
-<h4>52.000 VNĐ</h4>
-<div align="center">
-<input type="button" value="Mua hàng" class="button" onclick="location.href='dathang.html'">
-
-</div>
-
-
-
-</div>
+<img src="image/Lienhe.png" width="700px"/>
 <br />
 <br />
 
-<div class="col-sm-12">
-           
-                <h2> Mô tả sản phẩm </h2>
-     </br>
-    
-            <div id="productTabContent" class="tab-content">
-              <div class="tab-pane fade in active" id="product_tabs_description">
-                <div class="std rte">
-                  <p><strong>Sách Y Học - Bệnh Tim Mạch và cách điều trị</strong></p>
-                </br>
+<div class="hii"><h1 >ĐĂNG NHẬP</h1>
+<br /><br />
+<form onsubmit="return validateForm()">
 
-<p>=====================</p>
-<p>– Nhà xuất bản: NXB Thời Đại<br>
-– Kích thước: 13 x 20.5 cm<br>
-– Số trang: 264<br>
-– Hình thức bìa: Bìa mềm gấp mép<br>
-– Hình thức ruột: Một màu<br>
-– Mã vạch: 9786049425356<br>
-Công ty cổ phần Knowledge Bookstore : Đơn vị độc quyền liên kết xuất bản và phát hành sách</p>
-<p>&nbsp;</p>
-                </div>
-              </div>
-  
-<ul>
-  <li> <a href="dathang.html" data-toggle="tab">Đặt hàng</a> </li>
-              
-              
-              <li> <a href="huongdan.html" data-toggle="tab">Hướng dẫn mua hàng</a> </li>
-</ul>                            
-            </div>
-          </div>
+<div><a>Email*</a><br />
+<input class="h" type="text" id="email" placeholder="Nhập email"/>
+ <div class="val_error" id="email_error"></div></div><br />
+<div><a>Mật Khẩu</a><br />
+<input class="h" type="text" id="password" placeholder="Nhập password"/>
+ <div class="val_error" id="password_error"></div></div><br />
+ <a>Quên Mật Khẩu?</a><a href="test.html">Nhấn vào đây</a>
+<div class="hu"><button type="submit">Đăng Nhập</button></div>
+<div class="hu"><button type="submit">Đăng Nhập Bằng Facebook</button></div>
+
+</form></div><br clear="both" />
+
+<script>
+	var email = document.getElementById('email');
+	var password = document.getElementById('password');
+	var email_error = document.getElementById('email_error');
+	var password_error = document.getElementById('password_error');
+	email.addEventListener('blur', emailVertify, true);
+
+	function next(){
+	if(dem==imgs.length-1){
+		dem=0;
+	}else{dem++;}
+	document.getElementById('imgslide').src="images/" +imgs[dem];}
+	
+	chay=setInterval(function(){next();},1000);
+
+	function emailVertify(){
+		var acong = email.value.indexOf('@');
+		var dot = email.value.lastIndexOf('.');
+		
+		if(email.value != "" || acong>=1 || dot >= acong+2 || dot+2<email.value.length){
+			email.style.border = "";
+			email_error.innerHTML = "";
+			return true;	
+		}	
+	}
+	function validateForm(){
+		var acong = email.value.indexOf('@');
+	var dot = email.value.lastIndexOf('.');
+		
+		if(email.value == "" || acong<1 || dot < acong+2 || dot+2>=email.value.length){
+			email.style.border = "2px solid red";
+			email_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập đúng email";
+			email.focus();
+			return false;	
+		}
+		if(password.value==""){
+   password.style.border="2px solid red";
+   password_error.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bạn cần nhập password";
+		password.focus();
+		return false;
+	}
+	else 
+		 { alert ("Đăng kí thành công")}
+}
+</script>
 
 
-<div align="center" class="lh">
-<a class="lh1">Xin liên hệ ngay với</a> <a class="lh2">Knowledge Bookstore</a> <a class="lh1"> để biết thêm thông tin về giá cả sản phẩm:</a><br />
-<a class="lh3">Điện thoại:</a><a class="lh1"> 0983 525531 ~ 0962 739775</a><br />
-<a class="lh3">Facebook:</a><a class="lh1"> Lâm Gia Huy</a>
-</div><br />
-<ul style="list-style:circle">
-<li>  Quý khách nhận hàng mới thanh toán tiền. </li>
-<li> Giao hàng trực tiếp với Khách hàng tại Cần Thơ.</li>
-<li> Khách hàng ở tỉnh khác chúng tôi sẽ chuyển phát nhanh theo đường bưu điện.</li>
-<li>Miễn phí toàn bộ cước vận chuyển đối với khách hàng mua lẻ trên toàn quốc.</li>
-</ul>
-<h2>***Trân trọng cảm ơn sự quan tâm của quý khách hàng***</h2>
 </article>
 
 <aside>
@@ -159,9 +180,7 @@ Công ty cổ phần Knowledge Bookstore : Đơn vị độc quyền liên kết
 </div>
 </div>
 <br />
-
 <div class="menu2" align="center">
-
 <h3>HỖ TRỢ TRỤC TUYẾN</h3>
 <img src="image/icon2.png" />
 <p>Lâm Gia Huy</p>
@@ -177,7 +196,8 @@ Công ty cổ phần Knowledge Bookstore : Đơn vị độc quyền liên kết
 <h3>ĐỊA CHỈ SHOP</h3>
 <img src="image/icon2.png" />
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3928.6501453530354!2d105.7652943!3d10.045701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0880fb4de24ad%3A0xe14a9332d13d93ef!2zMjU2IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIEFuIEjDsmEsIE5pbmggS2nhu4F1LCBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1520396587204" width="260" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+<br /><br /><br />
+<img src="image/log.png" width="260px" />
 </div>
 </aside>
 <footer align="center">
@@ -195,7 +215,7 @@ Công ty cổ phần Knowledge Bookstore : Đơn vị độc quyền liên kết
       <div class="row">
         <div class="col-sm-12 col-xs-12 copyright">
           <span class="provide">© Bản quyền thuộc về Knowledge Bookstore</span><span class="mtinvi"> </span><span>
-        </div>
+          	   </div>
       </div>
     </div>
 </footer>
